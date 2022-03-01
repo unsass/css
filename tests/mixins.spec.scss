@@ -1,0 +1,56 @@
+// ============================================================================================= //
+//                                             TEST                                              //
+// ============================================================================================= //
+
+@use "true" as *;
+@use "../index" as css;
+
+@include describe("css.declaration()") {
+    @include it("Should return simple declaration.") {
+        @include assert {
+            @include output(false) {
+                .foo {
+                    @include css.declaration(color, darkcyan);
+                }
+            }
+
+            @include expect(false) {
+                .foo {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return simple declaration with '!important'.") {
+        @include assert {
+            @include output(false) {
+                .foo {
+                    @include css.declaration(color, darkcyan, true);
+                }
+            }
+
+            @include expect(false) {
+                .foo {
+                    color: darkcyan !important;
+                }
+            }
+        }
+    }
+
+    @include it("Should return mixed declaration.") {
+        @include assert {
+            @include output(false) {
+                .foo {
+                    @include css.declaration(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75)));
+                }
+            }
+
+            @include expect(false) {
+                .foo {
+                    box-shadow: 0 0 10px 5px rgba(0, 139, 139, 0.75), inset 0 0 10px 5px rgba(0, 139, 139, 0.75);
+                }
+            }
+        }
+    }
+}
