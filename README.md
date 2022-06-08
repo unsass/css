@@ -43,8 +43,8 @@ The following Sass...
 @use "@unsass/css";
 
 .foo {
-    @include css.declaration(color, darkcyan);
-    @include css.declaration(font-size, 16px, true);
+    @include css.declaration(color, darkcyan); // Standard declaration.
+    @include css.declaration(font-size, 16px, true); // Declaration with `!important`.
     @include css.declaration(box-shadow, (0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75))); // Use parentheses for declare comma-separated values list.
 }
 ```
