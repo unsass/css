@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/unsass/css/compare/v2.0.0...v2.0.1) (2022-06-10)
+
+
+### Bug Fixes
+
+* update package.json ([f09784d](https://github.com/unsass/css/commit/f09784dbfe51bcf353f447be8c160884ab10ed9a))
+
 ## [2.0.0](https://github.com/unsass/css/compare/v1.0.0...v2.0.0) (2022-06-10)
 
 
