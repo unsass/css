@@ -49,6 +49,11 @@
 ///     box-shadow: 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75);
 ///   }
 ///
+/// @see {function} custom-properties.is-custom-prop
+/// @see {function} custom-properties.get-varname
+/// @see {function} custom-properties.get-fallback
+/// @see {function} custom-properties.create-var
+///
 @mixin declaration($property, $value: null, $important: false) {
     @if not custom-properties.is-custom-prop($property) and $value == null {
         @error "Invalid value, the value can't be `null` with standard property name.";
