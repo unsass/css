@@ -58,3 +58,28 @@ The following Sass...
     box-shadow: 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75);
 }
 ```
+
+#### Add a custom property declaration with `css.declaration()`
+
+The following Sass...
+
+```scss
+@use "@unsass/css";
+@use "@unsass/css/custom-porperties";
+
+.foo {
+    @include css.declaration(custom-properties.create(--foo, darkcyan));
+    @include css.declaration(color, custom-properties.create(--foo, darkcyan));
+    @include css.declaration(color, custom-properties.create(--foo, custom-properties.create(--bar, darkcyan)));
+}
+```
+
+...will produce the following CSS...
+
+```css
+.foo {
+    --foo: darkcyan;
+    color: var(--foo, darkcyan);
+    color: var(--foo, var(--bar, darkcyan));
+}
+```

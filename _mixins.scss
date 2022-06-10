@@ -2,6 +2,22 @@
 //                                            MIXINS                                             //
 // ============================================================================================= //
 
+@use "./src/custom-properties";
+
+// ------------------------------------------------------------------------- //
+// Privates mixins
+// ------------------------------------------------------------------------- //
+
+@mixin _declaration($property, $value, $important: false) {
+    $is-important: if($important, "!important", "");
+
+    #{$property}: $value #{$is-important};
+}
+
+// ------------------------------------------------------------------------- //
+// Public mixins
+// ------------------------------------------------------------------------- //
+
 ///
 /// @example - scss
 ///   .foo {
@@ -33,8 +49,16 @@
 ///     box-shadow: 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75);
 ///   }
 ///
-@mixin declaration($property, $value, $important: false) {
-    $is-important: if($important, "!important", "");
+@mixin declaration($property, $value: null, $important: false) {
+    @if not custom-properties.is-custom-prop($property) and $value == null {
+        @error "Invalid value, the value can't be `null` with standard property name.";
+    }
 
-    #{$property}: $value #{$is-important};
+    @if custom-properties.is-custom-prop($property) {
+        @include _declaration(custom-properties.get-varname($property), custom-properties.get-fallback($property), $important);
+    } @else if custom-properties.is-custom-prop($value) {
+        @include _declaration($property, custom-properties.create-var($value), $important);
+    } @else {
+        @include _declaration($property, $value, $important);
+    }
 }

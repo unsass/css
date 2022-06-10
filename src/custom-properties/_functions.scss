@@ -1,0 +1,45 @@
+// ============================================================================================= //
+//                                           FUNCTIONS                                           //
+// ============================================================================================= //
+
+@use "sass:meta";
+@use "sass:map";
+@use "sass:string";
+
+@function create($name, $fallback: null) {
+    @if string.slice($name, 1, 2) != "--" {
+        $name: --#{$name};
+    }
+
+    @return (
+        varname: $name,
+        fallback: $fallback
+    );
+}
+
+@function get-varname($custom-prop) {
+    @return map.get($custom-prop, "varname");
+}
+
+@function get-fallback($custom-prop) {
+    @return map.get($custom-prop, "fallback");
+}
+
+@function is-custom-prop($value) {
+    @return meta.type-of($value) == "map" and map.has-key($value, "varname");
+}
+
+@function create-var($custom-prop) {
+    $name: get-varname($custom-prop);
+    $fallback: get-fallback($custom-prop);
+
+    @if is-custom-prop($fallback) {
+        @return var($name, create-var($fallback));
+    }
+
+    @if $fallback {
+        @return var($name, $fallback);
+    }
+
+    @return var($name);
+}

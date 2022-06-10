@@ -4,9 +4,10 @@
 
 @use "true" as *;
 @use "../index" as css;
+@use "../custom-properties";
 
-@include describe("css.declaration()") {
-    @include it("Should return simple declaration.") {
+@include describe("css.declaration().") {
+    @include it("Should return a css declaration.") {
         @include assert {
             @include output(false) {
                 .foo {
@@ -22,7 +23,23 @@
         }
     }
 
-    @include it("Should return simple declaration with '!important'.") {
+    @include it("Should return a css declaration with custom property.") {
+        @include assert {
+            @include output(false) {
+                .test {
+                    @include css.declaration(--foo, darkcyan);
+                }
+            }
+
+            @include expect(false) {
+                .test {
+                    --foo: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return a css declaration with `!important` option.") {
         @include assert {
             @include output(false) {
                 .foo {
@@ -38,7 +55,7 @@
         }
     }
 
-    @include it("Should return mixed declaration.") {
+    @include it("Should return a css mixed declaration.") {
         @include assert {
             @include output(false) {
                 .foo {
@@ -49,6 +66,72 @@
             @include expect(false) {
                 .foo {
                     box-shadow: 0 0 10px 5px rgba(0, 139, 139, 0.75), inset 0 0 10px 5px rgba(0, 139, 139, 0.75);
+                }
+            }
+        }
+    }
+}
+
+@include describe("css.declaration() with custom properties.") {
+    @include it("Should return a css declaration with custom property from `custom-properties.create()` function.") {
+        @include assert {
+            @include output(false) {
+                .test {
+                    @include css.declaration(custom-properties.create(--foo, darkcyan));
+                }
+            }
+
+            @include expect(false) {
+                .test {
+                    --foo: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return a css declaration with custom property from `custom-properties.create()` function with missing `--`.") {
+        @include assert {
+            @include output(false) {
+                .test {
+                    @include css.declaration(custom-properties.create(foo, darkcyan));
+                }
+            }
+
+            @include expect(false) {
+                .test {
+                    --foo: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return a css declaration with `var()`.") {
+        @include assert {
+            @include output(false) {
+                .test {
+                    @include css.declaration(color, custom-properties.create(--foo, darkcyan));
+                }
+            }
+
+            @include expect(false) {
+                .test {
+                    color: var(--foo, darkcyan);
+                }
+            }
+        }
+    }
+
+    @include it("Should return a css declaration with nested `var()`.") {
+        @include assert {
+            @include output(false) {
+                .test {
+                    @include css.declaration(color, custom-properties.create(--foo, custom-properties.create(--bar, darkcyan)));
+                }
+            }
+
+            @include expect(false) {
+                .test {
+                    color: var(--foo, var(--bar, darkcyan));
                 }
             }
         }
