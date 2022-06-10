@@ -49,7 +49,9 @@
         "url": "git+https://github.com/unsass/css.git"
     },
     "files": [
-        "*.scss"
+        "src/**/*",
+        "*.scss",
+        "CHANGELOG.md"
     ],
     "publishConfig": {
         "access": "public"
