@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.2](https://github.com/unsass/css/compare/v2.0.1...v2.0.2) (2022-06-10)
+
+
+### Bug Fixes
+
+* bad `[@use](https://github.com/use)` path on `_mixins.scss` ([686bf81](https://github.com/unsass/css/commit/686bf81818fad6fae3a909dd7a8d32cfff24a56f))
+
 ## [2.0.1](https://github.com/unsass/css/compare/v2.0.0...v2.0.1) (2022-06-10)
 
 
