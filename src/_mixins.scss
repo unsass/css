@@ -2,6 +2,9 @@
 //                                            MIXINS                                             //
 // ============================================================================================= //
 
+@use "sass:meta";
+@use "sass:list";
+@use "sass:string";
 @use "./custom-properties";
 
 // ------------------------------------------------------------------------- //
@@ -65,5 +68,39 @@
         @include _declaration($property, custom-properties.create-var($value), $important);
     } @else {
         @include _declaration($property, $value, $important);
+    }
+}
+
+///
+/// Selector
+///
+@mixin selector($key, $selector: &, $separator: ":", $suffix: false) {
+    $string: if(meta.type-of($selector) == list, "#{list.nth($selector, 1)}", $selector);
+    $is-class: string.slice($string, 1, 1);
+
+    $meta-list: ();
+    $meta-list: list.append( $meta-list, (1 2), comma);
+    $meta-list: list.append( $meta-list, (3 4), comma);
+
+    @warn $meta-list;
+        // WARNING: 1 2, 3 4
+
+    @warn list.nth($meta-list, 1);
+        // WARNING: 1 2
+
+    @if $is-class != "." {
+        @error "Invalid `#{$selector}` selector. Choose a class selector instead.";
+    } @else {
+        $selector: string.slice($string, 2);
+    }
+
+    @if $suffix {
+        .#{$selector}#{string.unquote("\\") + $separator}#{$key} {
+            @content;
+        }
+    } @else {
+        @at-root .#{$key}#{string.unquote("\\") + $separator}#{$selector} {
+            @content;
+        }
     }
 }

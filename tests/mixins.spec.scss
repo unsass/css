@@ -137,3 +137,105 @@
         }
     }
 }
+
+@include describe("css.selector()") {
+    @include it("Should return prefixed selector.") {
+        @include assert {
+            @include output(false) {
+                @include css.selector("md", ".foo") {
+                    color: darkcyan;
+                }
+            }
+
+            @include expect(false) {
+                .md\:foo {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return prefixed selector with custom divider.") {
+        @include assert {
+            @include output(false) {
+                @include css.selector("md", ".foo", "@") {
+                    color: darkcyan;
+                }
+            }
+
+            @include expect(false) {
+                .md\@foo {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return suffixed selector.") {
+        @include assert {
+            @include output(false) {
+                @include css.selector("md", ".foo", $suffix: true) {
+                    color: darkcyan;
+                }
+            }
+
+            @include expect(false) {
+                .foo\:md {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return suffixed selector with custom divider.") {
+        @include assert {
+            @include output(false) {
+                @include css.selector("md", ".foo", "@", true) {
+                    color: darkcyan;
+                }
+            }
+
+            @include expect(false) {
+                .foo\@md {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return nested prefixed selector.") {
+        @include assert {
+            @include output(false) {
+                .foo {
+                    @include css.selector("md") {
+                        color: darkcyan;
+                    }
+                }
+            }
+
+            @include expect(false) {
+                .md\:foo {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return nested prefixed selector with custom divider.") {
+        @include assert {
+            @include output(false) {
+                .foo {
+                    @include css.selector("md", $separator: "@") {
+                        color: darkcyan;
+                    }
+                }
+            }
+
+            @include expect(false) {
+                .md\@foo {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+}
