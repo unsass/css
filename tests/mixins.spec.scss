@@ -137,3 +137,196 @@
         }
     }
 }
+
+@include describe("css.selector()") {
+    @include it("Should return prefixed selector.") {
+        @include assert {
+            @include output(false) {
+                .foo {
+                    @include css.selector("md") {
+                        color: darkcyan;
+                    }
+                }
+            }
+
+            @include expect(false) {
+                .md\:foo {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return prefixed selector with custom separator.") {
+        @include assert {
+            @include output(false) {
+                .foo {
+                    @include css.selector("md", "@") {
+                        color: darkcyan;
+                    }
+                }
+            }
+
+            @include expect(false) {
+                .md\@foo {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+
+
+
+    @include it("Should return prefixed selector with numbers.") {
+        @include assert {
+            @include output(false) {
+                .foo {
+                    @include css.selector("2xl") {
+                        color: darkcyan;
+                    }
+                }
+            }
+
+            @include expect(false) {
+                .\32 xl\:foo {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return suffixed selector.") {
+        @include assert {
+            @include output(false) {
+                .foo {
+                    @include css.selector("md", $suffix: true) {
+                        color: darkcyan;
+                    }
+                }
+            }
+
+            @include expect(false) {
+                .foo\:md {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return suffixed selector with custom separator.") {
+        @include assert {
+            @include output(false) {
+                .foo {
+                    @include css.selector("md", "@", true) {
+                        color: darkcyan;
+                    }
+                }
+            }
+
+            @include expect(false) {
+                .foo\@md {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return suffixed selector with numbers.") {
+        @include assert {
+            @include output(false) {
+                .foo {
+                    @include css.selector("2xl", $suffix: true) {
+                        color: darkcyan;
+                    }
+                }
+            }
+
+            @include expect(false) {
+                .foo\:2xl {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return prefixed custom selector.") {
+        @include assert {
+            @include output(false) {
+                @include css.selector("md", $selector: ".foo") {
+                    color: darkcyan;
+                }
+            }
+
+            @include expect(false) {
+                .md\:foo {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return prefixed custom selector.") {
+        @include assert {
+            @include output(false) {
+                @include css.selector("md", $selector: ".foo") {
+                    color: darkcyan;
+                }
+            }
+
+            @include expect(false) {
+                .md\:foo {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return prefixed custom selector with custom separator.") {
+        @include assert {
+            @include output(false) {
+                @include css.selector("md", "@", $selector: ".foo") {
+                    color: darkcyan;
+                }
+            }
+
+            @include expect(false) {
+                .md\@foo {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return suffixed custom selector.") {
+        @include assert {
+            @include output(false) {
+                @include css.selector("md", $suffix: true, $selector: ".foo") {
+                    color: darkcyan;
+                }
+            }
+
+            @include expect(false) {
+                .foo\:md {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+
+    @include it("Should return suffixed custom selector with custom separator.") {
+        @include assert {
+            @include output(false) {
+                @include css.selector("md", "@", true, ".foo") {
+                    color: darkcyan;
+                }
+            }
+
+            @include expect(false) {
+                .foo\@md {
+                    color: darkcyan;
+                }
+            }
+        }
+    }
+
+}
