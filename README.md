@@ -6,10 +6,7 @@
 
 ## Introduction
 
-Easily manage your CSS declarations.
-
-> **Note:** this is new code moved
-> from [`@sass-collective/css`](https://github.com/sass-collective/sass-collective/tree/master/packages/css) repository.
+Sass mixins to manage CSS declarations with custom properties option.
 
 ## Installing
 

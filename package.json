@@ -1,7 +1,7 @@
 {
     "name": "@unsass/css",
     "version": "2.0.2",
-    "description": "Easily manage your CSS declarations.",
+    "description": "Sass mixins to manage CSS declarations with custom properties option.",
     "scripts": {
         "lint:css": "stylelint --fix \"**/*.scss\"",
         "lint": "npm-run-all --parallel lint:*",
@@ -25,17 +25,17 @@
         "npm-run-all": "^4.1.5",
         "sass-true": "^6.1.0",
         "semantic-release": "^19.0.3",
-        "stylelint": "^14.9.1",
+        "stylelint": "^14.10.0",
         "stylelint-config-unsass": "^1.0.0"
     },
     "dependencies": {
         "sass": "^1.52.3"
     },
     "keywords": [
-        "declaration",
-        "unsass",
         "sass",
         "css",
+        "declaration",
+        "unsass",
         "front-end"
     ],
     "license": "MIT",
