@@ -1,6 +1,6 @@
 {
     "name": "@unsass/css",
-    "version": "2.0.3",
+    "version": "2.1.0",
     "description": "Sass mixins to manage CSS declarations with custom properties option.",
     "scripts": {
         "lint:css": "stylelint --fix \"**/*.scss\"",

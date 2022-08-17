@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.0](https://github.com/unsass/css/compare/v2.0.3...v2.1.0) (2022-08-17)
+
+
+### Features
+
+* **selector:** add selector mixin ([391b546](https://github.com/unsass/css/commit/391b54632f6d44f8478d73632bafc0e0d786fbcf))
+
 ## [2.0.3](https://github.com/unsass/css/compare/v2.0.2...v2.0.3) (2022-08-17)
 
 
