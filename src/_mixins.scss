@@ -4,6 +4,7 @@
 
 @use "sass:meta";
 @use "sass:list";
+@use "sass:selector";
 @use "sass:string";
 @use "@unsass/utilities";
 @use "./custom-properties";
@@ -130,5 +131,77 @@
         @at-root .#{$key}#{string.unquote("\\") + $separator}#{$selector} {
             @content;
         }
+    }
+}
+
+///
+/// @example - scss
+///   @include set-selector("foo") {
+///     color: darkcyan;
+///   }
+///
+/// @example - css
+///   .foo {
+///     color: darkcyan;
+///   }
+///
+/// @example - scss
+///   @include set-selector("foo", "md") {
+///     color: darkcyan;
+///   }
+///
+/// @example - css
+///   .md:foo {
+///     color: darkcyan;
+///   }
+///
+/// @example - scss
+///   @include set-selector("foo", $pseudo-class: "hover") {
+///     color: darkcyan;
+///   }
+///
+/// @example - css
+///   .foo:hover {
+///     color: darkcyan;
+///   }
+///
+/// @example - scss
+///   @include set-selector("foo", $pseudo-element: "before") {
+///     color: darkcyan;
+///   }
+///
+/// @example - css
+///   .foo::before {
+///     color: darkcyan;
+///   }
+///
+/// @param {string} $name - Class selector name.
+/// @param {string} $scope - Class selector prefix / suffix value.
+/// @param {string} $separator - Class selector prefix / suffix separator.
+/// @param {string} $pseudo-class - Class selector pseudo-class.
+/// @param {string} $pseudo-element - Class selector pseudo-element.
+/// @param {boolean} $suffix - Use suffix instead of prefix.
+///
+/// @access public
+///
+@mixin set-selector($name, $scope: null, $separator: ":", $pseudo-class: null, $pseudo-element: null, $suffix: false) {
+    @if $pseudo-class {
+        $name: selector.append($name, ":#{$pseudo-class}");
+    }
+
+    @if $pseudo-element {
+        $name: selector.append($name, "::#{$pseudo-element}");
+    }
+
+    @if $scope and not $suffix {
+        $name: selector.append("#{$scope}\\#{$separator}", $name);
+    }
+
+    @if $scope and $suffix {
+        $name: selector.append($name, "\\#{$separator}#{$scope}");
+    }
+
+    .#{$name} {
+        @content;
     }
 }
