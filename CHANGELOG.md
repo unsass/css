@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.0-beta.2](https://github.com/unsass/css/compare/v2.2.0-beta.1...v2.2.0-beta.2) (2022-08-26)
+
+
+### Features
+
+* **mixin:** add `set-selector` mixin ([8b61f56](https://github.com/unsass/css/commit/8b61f56de9e59c50de10017787fc9d8bb07cc8e3))
+* **mixin:** prevent `$scope`  value start with number ([4753ad9](https://github.com/unsass/css/commit/4753ad9d0b421f2957fbb1bfce4d85cf14b2ca11))
+
 ## [2.2.0-beta.1](https://github.com/unsass/css/compare/v2.1.0...v2.2.0-beta.1) (2022-08-25)
 
 
