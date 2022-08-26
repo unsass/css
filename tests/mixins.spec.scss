@@ -365,10 +365,8 @@
         @include it("Should return prefixed class selector with numbers.") {
             @include assert {
                 @include output(false) {
-                    .foo {
-                        @include css.selector("2xl") {
-                            color: darkcyan;
-                        }
+                    @include css.set-selector("foo", "2xl") {
+                        color: darkcyan;
                     }
                 }
 
@@ -415,10 +413,8 @@
         @include it("Should return suffixed class selector with numbers.") {
             @include assert {
                 @include output(false) {
-                    .foo {
-                        @include css.selector("2xl", $suffix: true) {
-                            color: darkcyan;
-                        }
+                    @include css.set-selector("foo", "2xl", $suffix: true) {
+                        color: darkcyan;
                     }
                 }
 

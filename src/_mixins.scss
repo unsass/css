@@ -194,6 +194,10 @@
     }
 
     @if $scope and not $suffix {
+        @if meta.type-of(functions.number(string.slice($scope, 1, $end-at: 1))) == "number" {
+            $scope: utilities.string-replace(\3 #{string.unquote($scope)}, " ");
+        }
+
         $name: selector.append("#{$scope}\\#{$separator}", $name);
     }
 
