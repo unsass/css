@@ -60,10 +60,6 @@
 /// @see {function} custom-properties.create-var
 ///
 @mixin declaration($property, $value: null, $important: false) {
-    @if not custom-properties.is-custom-prop($property) and $value == null {
-        @error "Invalid value, the value can't be `null` with standard property name.";
-    }
-
     @if custom-properties.is-custom-prop($property) {
         @include _declaration(custom-properties.get-varname($property), custom-properties.get-fallback($property), $important);
     } @else if custom-properties.is-custom-prop($value) {
