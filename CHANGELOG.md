@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.0](https://github.com/unsass/css/compare/v2.1.1...v2.2.0) (2022-09-21)
+
+
+### Features
+
+* forward functions ([899e033](https://github.com/unsass/css/commit/899e03396f296e0f2d17cbe07d5a2b5b9031c2d2))
+
 ## [2.1.1](https://github.com/unsass/css/compare/v2.1.0...v2.1.1) (2022-09-13)
 
 
