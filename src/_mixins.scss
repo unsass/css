@@ -5,9 +5,7 @@
 @use "sass:meta";
 @use "sass:list";
 @use "sass:string";
-@use "@unsass/utilities";
 @use "./custom-properties";
-@use "./functions";
 
 // ------------------------------------------------------------------------- //
 // Private mixins
@@ -66,65 +64,5 @@
         @include _declaration($property, custom-properties.create-var($value), $important);
     } @else {
         @include _declaration($property, $value, $important);
-    }
-}
-
-///
-/// @example - scss
-///   .foo {
-///     @include selector(md) {
-///       background: darkcyan;
-///     }
-///   }
-///
-/// @example - css
-///   .md:foo {
-///     background: darkcyan;
-///   }
-///
-/// @example - scss
-///   .foo {
-///     @include selector(md, $suffix: true) {
-///       background: darkcyan;
-///     }
-///   }
-///
-/// @example - css
-///   .foo:md {
-///     background: darkcyan;
-///   }
-///
-/// @see {function} functions.number
-/// @see {function} functions.replace
-///
-/// @link https://sparkbox.com/foundry/responsive_class_suffixes_automating_classes_with_sass_mixins_and_sass_maps
-///
-@mixin selector($key, $separator: ":", $suffix: false, $selector: &) {
-    $string: if(meta.type-of($selector) == list, "#{list.nth($selector, 1)}", $selector);
-    $is-class: string.slice($string, 1, 1);
-    $nested-selector: if($selector == &, true, false);
-
-    @if $is-class != "." {
-        @error "Invalid `#{$selector}` selector. Choose a class selector instead.";
-    } @else {
-        $selector: string.slice($string, 2);
-    }
-
-    @if meta.type-of(functions.number(string.slice($key, 1, $end-at: 1))) == "number" {
-        $key: utilities.string-replace(\3 #{string.unquote($key)}, " ");
-    }
-
-    @if $suffix and $nested-selector {
-        &#{string.unquote("\\") + $separator}#{$key} {
-            @content;
-        }
-    } @else if $suffix and not $nested-selector {
-        .#{$selector}#{string.unquote("\\") + $separator}#{$key} {
-            @content;
-        }
-    } @else {
-        @at-root .#{$key}#{string.unquote("\\") + $separator}#{$selector} {
-            @content;
-        }
     }
 }
