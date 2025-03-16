@@ -2,13 +2,13 @@
 //                                             TEST                                              //
 // ============================================================================================= //
 
-@use "true" as *;
+@use "pkg:sass-true" as *;
 @use "../index" as css;
 @use "../custom-properties";
 
 @include describe("mixins") {
     @include describe("declaration()") {
-        @include it("Should return a css declaration.") {
+        @include it("Should return a CSS declaration.") {
             @include assert {
                 @include output(false) {
                     .foo {
@@ -24,7 +24,7 @@
             }
         }
 
-        @include it("Should return a css declaration with custom property.") {
+        @include it("Should return a CSS declaration with custom property.") {
             @include assert {
                 @include output(false) {
                     .test {
@@ -40,7 +40,7 @@
             }
         }
 
-        @include it("Should return a css declaration with `!important` option.") {
+        @include it("Should return a CSS declaration with `!important` option.") {
             @include assert {
                 @include output(false) {
                     .foo {
@@ -74,7 +74,7 @@
     }
 
     @include describe("declaration() with custom properties") {
-        @include it("Should return a css declaration with custom property from `custom-properties.create()` function.") {
+        @include it("Should return a CSS declaration with custom property from `custom-properties.create()` function.") {
             @include assert {
                 @include output(false) {
                     .test {
@@ -90,7 +90,7 @@
             }
         }
 
-        @include it("Should return a css declaration with custom property from `custom-properties.create()` function with missing `--`.") {
+        @include it("Should return a CSS declaration with custom property from `custom-properties.create()` function with missing `--`.") {
             @include assert {
                 @include output(false) {
                     .test {
@@ -106,7 +106,7 @@
             }
         }
 
-        @include it("Should return a css declaration with `var()`.") {
+        @include it("Should return a CSS declaration with `var()`.") {
             @include assert {
                 @include output(false) {
                     .test {
@@ -122,7 +122,7 @@
             }
         }
 
-        @include it("Should return a css declaration with nested `var()`.") {
+        @include it("Should return a CSS declaration with nested `var()`.") {
             @include assert {
                 @include output(false) {
                     .test {
