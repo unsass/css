@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.0.0 (2025-03-17)
+
+* test(declaration): update tests ([29a9e3b](https://github.com/unsass/css/commit/29a9e3b))
+* test(deps): switch form jest to vitest ([75bcd87](https://github.com/unsass/css/commit/75bcd87))
+* refactor: update comments ([36ed30e](https://github.com/unsass/css/commit/36ed30e))
+* chore(deps)!: switch to node `>=18` ([6ff5692](https://github.com/unsass/css/commit/6ff5692))
+* refactor(core)!: removed functions call in `index.scss` ([6663101](https://github.com/unsass/css/commit/6663101))
+* chore: add `"type": "module"` in `package.json` ([c374a9a](https://github.com/unsass/css/commit/c374a9a))
+* chore: switch to ESM ([26ff0e0](https://github.com/unsass/css/commit/26ff0e0))
+* chore(deps): bump to `sass-true` 8.1.0 ([33a9858](https://github.com/unsass/css/commit/33a9858))
+* chore(deps): clean `package-lock.json` ([5a874d3](https://github.com/unsass/css/commit/5a874d3))
+* chore(deps): prevent dependencies vulnerabilities ([47139d3](https://github.com/unsass/css/commit/47139d3))
+* ci: rename `node.js.yml` to `publish.yml` ([d41bc62](https://github.com/unsass/css/commit/d41bc62))
+* ci: update `publish.yml` ([3824abc](https://github.com/unsass/css/commit/3824abc))
+* build(deps): bump to `sass` 1.59.3 ([cbbf775](https://github.com/unsass/css/commit/cbbf775))
+* build(deps): bump to `sass` 1.85.1 ([38e7504](https://github.com/unsass/css/commit/38e7504))
+
+
+### BREAKING CHANGE
+
+* removed functions call in `index.scss`
+
 ## [2.3.0](https://github.com/unsass/css/compare/v2.2.0...v2.3.0) (2023-03-06)
 
 

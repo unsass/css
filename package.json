@@ -1,6 +1,6 @@
 {
     "name": "@unsass/css",
-    "version": "2.3.0",
+    "version": "3.0.0",
     "description": "Sass mixins to manage CSS declarations with custom properties option.",
     "type": "module",
     "scripts": {
