@@ -110,7 +110,7 @@
             @include assert {
                 @include output(false) {
                     .test {
-                        @include css.declaration(color, custom-properties.create(--foo, darkcyan));
+                        @include css.declaration(color, custom-properties.create(foo, darkcyan));
                     }
                 }
 
@@ -126,7 +126,7 @@
             @include assert {
                 @include output(false) {
                     .test {
-                        @include css.declaration(color, custom-properties.create(--foo, custom-properties.create(--bar, darkcyan)));
+                        @include css.declaration(color, custom-properties.create(foo, custom-properties.create(bar, darkcyan)));
                     }
                 }
 
