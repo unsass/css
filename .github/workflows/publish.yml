@@ -39,6 +39,11 @@ jobs:
     needs: test
     if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/beta' }}
 
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
