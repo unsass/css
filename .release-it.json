@@ -1,0 +1,65 @@
+{
+    "git": {
+        "commitMessage": "chore(release): publish version ${version}",
+        "tagName": "v${version}",
+        "requireBranch": "release-tool",
+        "requireCleanWorkingDir": false
+    },
+    "github": {
+        "release": false
+    },
+    "npm": {
+        "publish": false
+    },
+    "plugins": {
+        "@release-it/conventional-changelog": {
+            "infile": "CHANGELOG.md",
+            "header": "# Changelog\n\nAll notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.",
+            "preset": {
+                "name": "conventionalcommits",
+                "types": [
+                    {
+                        "type": "feat",
+                        "section": "Features"
+                    },
+                    {
+                        "type": "fix",
+                        "section": "Bug Fixes"
+                    },
+                    {
+                        "type": "chore",
+                        "hidden": true
+                    },
+                    {
+                        "type": "build",
+                        "section": "Build System"
+                    },
+                    {
+                        "type": "docs",
+                        "hidden": true
+                    },
+                    {
+                        "type": "style",
+                        "hidden": true
+                    },
+                    {
+                        "type": "refactor",
+                        "section": "Code Refactoring"
+                    },
+                    {
+                        "type": "perf",
+                        "hidden": true
+                    },
+                    {
+                        "type": "test",
+                        "hidden": true
+                    },
+                    {
+                        "type": "ci",
+                        "hidden": true
+                    }
+                ]
+            }
+        }
+    }
+}

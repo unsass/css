@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## 3.0.0 (2025-03-17)
+## [3.0.0](https://github.com/unsass/css/compare/v2.3.0...v3.0.0) (2025-03-17)
 
 * test(declaration): update tests ([29a9e3b](https://github.com/unsass/css/commit/29a9e3b))
 * test(deps): switch form jest to vitest ([75bcd87](https://github.com/unsass/css/commit/75bcd87))
