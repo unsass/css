@@ -18,13 +18,14 @@ export default {
                 preset: 'conventionalcommits',
                 releaseRules: [
                     {
-                        type: 'docs',
-                        scope: 'README',
+                        type: 'chore',
+                        scope: 'deps',
                         release: 'patch'
                     },
                     {
-                        type: 'refactor',
-                        release: 'minor'
+                        type: 'chore',
+                        scope: 'deps-dev',
+                        release: false
                     }
                 ]
             }
@@ -32,47 +33,7 @@ export default {
         [
             '@semantic-release/release-notes-generator',
             {
-                preset: 'conventionalcommits',
-                presetConfig: {
-                    types: [
-                        {
-                            type: 'feat',
-                            section: 'Features'
-                        },
-                        {
-                            type: 'fix',
-                            section: 'Bug Fixes'
-                        },
-                        {
-                            type: 'chore',
-                            hidden: true
-                        },
-                        {
-                            type: 'build',
-                            section: 'Build System'
-                        },
-                        {
-                            type: 'docs',
-                            hidden: true
-                        },
-                        {
-                            type: 'style',
-                            hidden: true
-                        },
-                        {
-                            type: 'refactor',
-                            section: 'Code Refactoring'
-                        },
-                        {
-                            type: 'perf',
-                            hidden: true
-                        },
-                        {
-                            type: 'test',
-                            hidden: true
-                        }
-                    ]
-                }
+                preset: 'conventionalcommits'
             }
         ],
         [
