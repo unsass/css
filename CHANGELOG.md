@@ -2,46 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## <small>3.0.1 (2025-12-12)</small>
+## [3.0.1](https://github.com/unsass/css/compare/v3.0.0...v3.0.1) (2025-12-12)</small>
 
-* ci: replace `.releaserc.json` by `release.config.js` ([4afb26f](https://github.com/unsass/css/commit/4afb26f))
-* ci: update `release.config.js` ([84c826c](https://github.com/unsass/css/commit/84c826c))
-* ci: update permissions ([757d8ba](https://github.com/unsass/css/commit/757d8ba))
-* ci: update permissions #99 ([c096acf](https://github.com/unsass/css/commit/c096acf)), closes [#99](https://github.com/unsass/css/issues/99)
-* ci: update to node 24 ([2dcda1a](https://github.com/unsass/css/commit/2dcda1a))
-* chore: prevent dependencies vulnerabilities ([a022199](https://github.com/unsass/css/commit/a022199))
-* chore: update `package.json` ([be3d1a5](https://github.com/unsass/css/commit/be3d1a5))
-* chore(deps-dev): bump to `@commitlint/cli` 20.1.0 ([a68b65b](https://github.com/unsass/css/commit/a68b65b))
-* chore(deps-dev): bump to `@commitlint/cli` 20.2.0 ([874b711](https://github.com/unsass/css/commit/874b711))
-* chore(deps-dev): bump to `sass-true` 10.0.0 ([c6fa1f1](https://github.com/unsass/css/commit/c6fa1f1))
-* chore(deps-dev): bump to `sass-true` 10.0.1 ([545266b](https://github.com/unsass/css/commit/545266b))
-* chore(deps-dev): bump to `sass-true` 9.0.0 ([c52f9af](https://github.com/unsass/css/commit/c52f9af))
-* chore(deps-dev): bump to `semantic-release` 25.0.1 ([9222f71](https://github.com/unsass/css/commit/9222f71))
-* chore(deps-dev): bump to `semantic-release` 25.0.2 ([a8a5fca](https://github.com/unsass/css/commit/a8a5fca))
-* chore(deps-dev): bump to `stylelint-config-unsass` 2.0.0 ([edeb28c](https://github.com/unsass/css/commit/edeb28c))
-* chore(deps-dev): bump to `stylelint-config-unsass` 2.2.0 ([12756ff](https://github.com/unsass/css/commit/12756ff))
-* chore(deps-dev): bump to `stylelint` 16.26.1 ([ae45eb9](https://github.com/unsass/css/commit/ae45eb9))
-* chore(deps-dev): bump to `vitest` 3.1.2 ([c65b7d2](https://github.com/unsass/css/commit/c65b7d2))
-* chore(deps-dev): bump to `vitest` 3.2.3 ([e746633](https://github.com/unsass/css/commit/e746633))
-* chore(deps-dev): prevent dependencies vulnerabilities ([c7d0713](https://github.com/unsass/css/commit/c7d0713))
+
+### Dependencies
+
 * chore(deps): bump to `sass` 1.95.0 ([c40697a](https://github.com/unsass/css/commit/c40697a))
 
-## 3.0.0 (2025-03-17)
+## [3.0.0](https://github.com/unsass/css/compare/v2.3.0...v3.0.0) (2025-03-17)
 
-* test(declaration): update tests ([29a9e3b](https://github.com/unsass/css/commit/29a9e3b))
-* test(deps): switch form jest to vitest ([75bcd87](https://github.com/unsass/css/commit/75bcd87))
 * refactor: update comments ([36ed30e](https://github.com/unsass/css/commit/36ed30e))
 * chore(deps)!: switch to node `>=18` ([6ff5692](https://github.com/unsass/css/commit/6ff5692))
 * refactor(core)!: removed functions call in `index.scss` ([6663101](https://github.com/unsass/css/commit/6663101))
-* chore: add `"type": "module"` in `package.json` ([c374a9a](https://github.com/unsass/css/commit/c374a9a))
-* chore: switch to ESM ([26ff0e0](https://github.com/unsass/css/commit/26ff0e0))
-* chore(deps): bump to `sass-true` 8.1.0 ([33a9858](https://github.com/unsass/css/commit/33a9858))
-* chore(deps): clean `package-lock.json` ([5a874d3](https://github.com/unsass/css/commit/5a874d3))
-* chore(deps): prevent dependencies vulnerabilities ([47139d3](https://github.com/unsass/css/commit/47139d3))
-* ci: rename `node.js.yml` to `publish.yml` ([d41bc62](https://github.com/unsass/css/commit/d41bc62))
-* ci: update `publish.yml` ([3824abc](https://github.com/unsass/css/commit/3824abc))
-* build(deps): bump to `sass` 1.59.3 ([cbbf775](https://github.com/unsass/css/commit/cbbf775))
-* build(deps): bump to `sass` 1.85.1 ([38e7504](https://github.com/unsass/css/commit/38e7504))
 
 
 ### BREAKING CHANGE
