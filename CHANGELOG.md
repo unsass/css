@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.1.0 (2026-01-03)
+
+* feat: use the plain-CSS if() syntax ([9d372ec](https://github.com/unsass/css/commit/9d372ec))
+* chore(deps-dev): bump to `@commitlint/cli` 20.3.0 ([19ccbca](https://github.com/unsass/css/commit/19ccbca))
+* chore(deps-dev): bump to `sass-true` 10.1.0 ([c3a6215](https://github.com/unsass/css/commit/c3a6215))
+* chore(deps-dev): bump to `vitest` 4.0.16 ([2bf90c8](https://github.com/unsass/css/commit/2bf90c8))
+* chore(deps): bump to `sass` 1.97.1 ([736d6fa](https://github.com/unsass/css/commit/736d6fa))
+* ci: update `release.config.js` ([b43687a](https://github.com/unsass/css/commit/b43687a))
+* ci: update `release.config.js` ([ba4990a](https://github.com/unsass/css/commit/ba4990a))
+
 ## [3.0.1](https://github.com/unsass/css/compare/v3.0.0...v3.0.1) (2025-12-12)</small>
 
 
