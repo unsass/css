@@ -15,7 +15,14 @@ export default {
         [
             '@semantic-release/commit-analyzer',
             {
-                preset: 'conventionalcommits'
+                preset: 'conventionalcommits',
+                releaseRules: [
+                    {
+                        type: 'chore',
+                        scope: 'deps',
+                        release: 'minor'
+                    }
+                ]
             }
         ],
         [
@@ -34,35 +41,8 @@ export default {
                         },
                         {
                             type: 'chore',
-                            hidden: true
-                        },
-                        {
-                            type: 'build',
-                            hidden: true
-                        },
-                        {
-                            type: 'ci',
-                            hidden: true
-                        },
-                        {
-                            type: 'docs',
-                            hidden: true
-                        },
-                        {
-                            type: 'style',
-                            hidden: true
-                        },
-                        {
-                            type: 'refactor',
-                            hidden: true
-                        },
-                        {
-                            type: 'perf',
-                            hidden: true
-                        },
-                        {
-                            type: 'test',
-                            hidden: true
+                            scope: 'deps',
+                            section: 'Dependencies'
                         }
                     ]
                 }
