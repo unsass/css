@@ -6,7 +6,12 @@
 
 ## Introduction
 
-Sass mixins to manage CSS declarations with custom properties option.
+CSS is a lightweight Sass toolkit that provides composable mixins for authoring and managing CSS property declarations.
+Use it to emit direct declarations or map values to CSS custom-properties so style tokens are consistent and
+configurable across a project.
+
+Designed to be small and framework-agnostic: includes helpers for shorthand declarations and optional custom-property
+output, making it easy to centralize and reuse declaration logic in modern Sass workflows.
 
 ## Installing
 
