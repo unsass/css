@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" width="100%" style="display:block">
+    <defs>
+        <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+            <circle cx="0.8" cy="0.8" r="0.7" fill="#fff" opacity="0.04"/>
+        </pattern>
+        <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#0b5d58"/>
+            <stop offset="0.5" stop-color="#129b95"/>
+            <stop offset="1" stop-color="#1ad1cb"/>
+        </linearGradient>
+        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#0b5d58"/>
+            <stop offset="0.5" stop-color="#129b95"/>
+            <stop offset="1" stop-color="#1ad1cb"/>
+        </linearGradient>
+        <clipPath id="frame">
+            <rect width="800" height="360"/>
+        </clipPath>
+    </defs>
+
+    <!-- content clipped to the square frame so the top bar stays within bounds -->
+    <g clip-path="url(#frame)">
+        <rect width="800" height="360" fill="#101a24"/>
+        <rect width="800" height="360" fill="url(#dots)"/>
+        <rect width="800" height="2.5" fill="url(#bar)" opacity="0.95"/>
+
+        <!-- curly-braces icon, reused from the docs homepage feature list (src/index.md) -->
+        <g transform="translate(400,46) scale(1.35) translate(-12,-12)" fill="none" stroke="#1ad1cb" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 4c-2 0-3 1-3 3v2c0 1-1 2-2 2 1 0 2 1 2 2v2c0 2 1 3 3 3"/>
+            <path d="M16 4c2 0 3 1 3 3v2c0 1 1 2 2 2-1 0-2 1-2 2v2c0 2-1 3-3 3"/>
+        </g>
+
+        <!-- wordmark -->
+        <text x="400" y="105" text-anchor="middle" font-family="Montserrat,ui-sans-serif,system-ui,sans-serif" font-weight="600"
+              font-size="34" letter-spacing="2" fill="#eeeeee">CSS</text>
+        <text x="400" y="127" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="11"
+              fill="#1ad1cb" opacity="0.8">composable Sass declaration mixins</text>
+
+        <!-- code mockup: declare + custom property -->
+        <rect x="130" y="152" width="540" height="168" rx="10" fill="#0c141d" stroke="#243341"/>
+        <rect x="130" y="152" width="540" height="28" rx="10" fill="#16212c"/>
+        <rect x="130" y="170" width="540" height="10" fill="#16212c"/>
+        <line x1="130" y1="180" x2="670" y2="180" stroke="#243341" stroke-width="0.75"/>
+        <circle cx="152" cy="166" r="4.5" fill="#ff5f57"/>
+        <circle cx="168" cy="166" r="4.5" fill="#febc2e"/>
+        <circle cx="184" cy="166" r="4.5" fill="#28c840"/>
+
+        <g font-family="ui-monospace,Menlo,monospace" font-size="13">
+            <text x="150" y="210">
+                <tspan fill="#1ad1cb">@use </tspan><tspan fill="#7fd88f">"@unsass/css"</tspan><tspan fill="#c8d0d4">;</tspan>
+            </text>
+            <text x="150" y="254"><tspan fill="#c8d0d4">.foo {</tspan></text>
+            <text x="170" y="276">
+                <tspan fill="#1ad1cb">@include</tspan><tspan fill="#c8d0d4"> css.declaration(</tspan><tspan fill="#82aaff">color</tspan><tspan fill="#c8d0d4">, </tspan><tspan fill="#e0a973">darkcyan</tspan><tspan fill="#c8d0d4">);</tspan>
+            </text>
+            <text x="150" y="298"><tspan fill="#c8d0d4">}</tspan></text>
+        </g>
+    </g>
+
+    <!-- crisp square border drawn on top, aligned with the clipped fill -->
+    <rect x="0.5" y="0.5" width="799" height="359" fill="none" stroke="#2a3a47"/>
+</svg>

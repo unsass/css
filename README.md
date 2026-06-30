@@ -13,6 +13,12 @@ configurable across a project.
 Designed to be small and framework-agnostic: includes helpers for shorthand declarations and optional custom-property
 output, making it easy to centralize and reuse declaration logic in modern Sass workflows.
 
+<div align="center">
+
+![CSS](.github/banner.svg)
+
+</div>
+
 ## Installing
 
 ```shell
