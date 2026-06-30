@@ -38,9 +38,11 @@
     },
     "keywords": [
         "sass",
+        "scss",
         "css",
         "declaration",
         "custom-properties",
+        "mixins",
         "unsass",
         "front-end"
     ],
