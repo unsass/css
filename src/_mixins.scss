@@ -13,6 +13,15 @@
 // Private mixins
 // ------------------------------------------------------------------------- //
 
+///
+/// Write a raw property/value declaration, optionally flagged `!important`.
+///
+/// @param {string} $property - CSS property name.
+/// @param {*} $value - Value to assign.
+/// @param {boolean} $important [false] - Append `!important` when `true`.
+///
+/// @access private
+///
 @mixin _declaration($property, $value, $important: false) {
     $is-important: if(sass($important): "!important"; else: "");
 
@@ -54,10 +63,16 @@
 ///     box-shadow: 0 0 10px 5px rgba(darkcyan, 0.75), inset 0 0 10px 5px rgba(darkcyan, 0.75);
 ///   }
 ///
+/// @param {string} $property - CSS property name, or a custom-property record to declare directly.
+/// @param {*} $value [null] - Value to assign, or a custom-property record to resolve as a `var()`.
+/// @param {boolean} $important [false] - Append `!important` when `true`.
+///
 /// @see {function} custom-properties.is-custom-prop
 /// @see {function} custom-properties.get-varname
 /// @see {function} custom-properties.get-fallback
 /// @see {function} custom-properties.create-var
+///
+/// @access public
 ///
 @mixin declaration($property, $value: null, $important: false) {
     @if custom-properties.is-custom-prop($property) {
@@ -94,10 +109,16 @@
 ///     background: darkcyan;
 ///   }
 ///
+/// @param {string} $key - Suffix key; a leading digit is escaped automatically.
+/// @param {string} $separator [":"] - Separator inserted between the selector and the key.
+/// @param {boolean} $suffix [false] - Append the key after the selector instead of prefixing it.
+/// @param {string | list} $selector [&] - Class selector to combine with, defaults to the current selector.
+///
 /// @see {function} functions.number
-/// @see {function} functions.replace
 ///
 /// @link https://sparkbox.com/foundry/responsive_class_suffixes_automating_classes_with_sass_mixins_and_sass_maps
+///
+/// @access public
 ///
 @mixin selector($key, $separator: ":", $suffix: false, $selector: &) {
     $string: if(  sass(meta.type-of($selector) == "list"): "#{list.nth($selector, 1)}"; else: $selector);

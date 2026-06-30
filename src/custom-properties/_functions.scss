@@ -6,6 +6,16 @@
 @use "sass:map";
 @use "sass:string";
 
+///
+/// Build a custom-property record, ready to be resolved with `create-var()`.
+///
+/// @param {string} $name - Custom property name, with or without the leading `--`.
+/// @param {*} $fallback [null] - Fallback value, or another custom-property record to chain.
+///
+/// @return {map} A custom-property record holding `varname` and `fallback`.
+///
+/// @access public
+///
 @function create($name, $fallback: null) {
     @if string.slice($name, 1, 2) != "--" {
         $name: --#{$name};
@@ -17,18 +27,64 @@
     );
 }
 
+///
+/// Get the variable name of a custom-property record.
+///
+/// @param {map} $custom-prop - Custom-property record built by `create()`.
+///
+/// @return {string} The custom property name (e.g. `--foo`).
+///
+/// @see {function} create
+///
+/// @access public
+///
 @function get-varname($custom-prop) {
     @return map.get($custom-prop, "varname");
 }
 
+///
+/// Get the fallback of a custom-property record.
+///
+/// @param {map} $custom-prop - Custom-property record built by `create()`.
+///
+/// @return {*} The configured fallback, or `null` when none was set.
+///
+/// @see {function} create
+///
+/// @access public
+///
 @function get-fallback($custom-prop) {
     @return map.get($custom-prop, "fallback");
 }
 
+///
+/// Check whether a value is a custom-property record built by `create()`.
+///
+/// @param {*} $value - Value to test.
+///
+/// @return {boolean} `true` when `$value` is a custom-property record.
+///
+/// @see {function} create
+///
+/// @access public
+///
 @function is-custom-prop($value) {
     @return meta.type-of($value) == "map" and map.has-key($value, "varname");
 }
 
+///
+/// Resolve a custom-property record into a `var()` expression, chaining nested fallbacks.
+///
+/// @param {map} $custom-prop - Custom-property record built by `create()`.
+///
+/// @return {string} A `var()` expression for the custom property and its resolved fallback.
+///
+/// @see {function} get-varname
+/// @see {function} get-fallback
+/// @see {function} is-custom-prop
+///
+/// @access public
+///
 @function create-var($custom-prop) {
     $name: get-varname($custom-prop);
     $fallback: get-fallback($custom-prop);

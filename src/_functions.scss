@@ -16,7 +16,13 @@
 // ------------------------------------------------------------------------- //
 
 ///
-/// Number.
+/// Coerce a single numeral character to a number, passing numbers through unchanged.
+///
+/// @param {number | string} $value - Number to pass through, or a single numeral character to convert.
+///
+/// @return {number} The resulting number.
+///
+/// @access private
 ///
 @function number($value) {
     @if meta.type-of($value) == "number" {
