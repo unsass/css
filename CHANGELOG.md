@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.0](https://github.com/unsass/css/compare/v3.1.0...v3.2.0) (2026-07-01)
+
+### Dependencies
+
+* **deps:** move sass from dependencies to peer/dev ([6a58e46](https://github.com/unsass/css/commit/6a58e46635c9fb98fc54e673581054a252cec8e5))
+
 ## [3.1.0](https://github.com/unsass/css/compare/v3.0.1...v3.1.0) (2026-01-03)
 
 ### Features
