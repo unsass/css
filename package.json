@@ -46,6 +46,7 @@
         "unsass",
         "front-end"
     ],
+    "author": "Front Factory",
     "license": "MIT",
     "homepage": "https://github.com/unsass/css#readme",
     "bugs": {
